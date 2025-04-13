@@ -41,6 +41,7 @@ public class Function
         };
     
         var response = client.Send(webRequest);
+        context.Logger.LogInformation(response.ToString());
         using var reader = new StreamReader(response.Content.ReadAsStream());
             
         return reader.ReadToEnd();
