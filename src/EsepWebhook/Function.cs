@@ -18,8 +18,9 @@ public class Function
     /// <returns></returns>
     public string FunctionHandler(object input, ILambdaContext context)
     {
+        context.Logger.LogInformation("My name is Juan");
         context.Logger.LogInformation($"FunctionHandler received: {input}");
-
+        
         dynamic json = JsonConvert.DeserializeObject<dynamic>(input.ToString());
 
         // Testing from postman, you can use this code to test the function
